@@ -10,38 +10,29 @@ document.querySelectorAll(".increaseHeart").forEach(btn => {
 
 const coinEl = document.getElementById("coin");
 let coins = parseInt(coinEl.textContent);
-
-// Grab the history body
 const historyBody = document.querySelector(".history-body");
 
-// Grab the clear history button
-const clearHistoryBtn = document.querySelector(".history-header .copy");
 
-// Attach event listener to all Call buttons
-const callBtns = document.querySelectorAll(".btn-section .bg-green-600");
+
+const callBtns = document.querySelectorAll(".callButton");
 
 callBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        const card = btn.closest(".card"); // find the parent card
-
-        // Service name + number from card
+        const card = btn.closest(".card");
         const serviceName = card.querySelector(".card-info h3").textContent;
         const serviceNum = card.querySelector(".num h1").textContent;
 
-        // Check if enough coins
+
         if (coins < 20) {
-            alert("Not enough coins to make a call. You need at least 20 coins.");
+            alert("❌ Not enough coins to make a call. You need at least 20 coins.");
             return;
         }
-
-        // Deduct coins
         coins -= 20;
         coinEl.textContent = coins;
+        let msg = `📞 Calling ${serviceName} ${serviceNum}...`;
+        let singleLineMessage = msg.replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, " ").trim();
+        alert(singleLineMessage);
 
-        // Show alert
-        alert("📞 Calling " + serviceName + " " + serviceNum + "...");
-
-        // Add to Call History dynamically
         const timeNow = new Date().toLocaleTimeString();
         const historyItem = document.createElement("div");
         historyItem.className = "history-item flex items-center gap-4 px-3 py-4 bg-[#FAFAFA] w-full justify-between";
@@ -56,8 +47,27 @@ callBtns.forEach(btn => {
     });
 });
 
-// Clear History button
+const clearHistoryBtn = document.getElementById("clearHistoryBtn");
 clearHistoryBtn.addEventListener("click", () => {
-    historyBody.innerHTML = ""; // wipe all history items
+    historyBody.innerHTML = "";
 });
-// Call history end here
+
+
+let totalCopy = document.getElementById("totalCopy");
+let copyCount = 0;
+
+const copyBtns = document.querySelectorAll(".copy-btn");
+
+copyBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const card = btn.closest(".card");
+        const hotlineNumber = card.querySelector(".service-number").textContent;
+        navigator.clipboard.writeText(hotlineNumber).then(() => {
+            let copyAlert = `${hotlineNumber} copied to clipboard!`;
+            let singleLineAlert = copyAlert.replace(/(\r\n|\n|\r)/gm, " ").replace(/\s+/g, " ").trim();
+            alert(singleLineAlert);
+            copyCount++;
+            totalCopy.textContent = copyCount;
+        });
+    });
+});

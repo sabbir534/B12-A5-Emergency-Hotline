@@ -55,7 +55,9 @@
         <div
           class="copy rounded-[50px] bg-[#00A63E] flex w-[123px] h-[52px] p-3 justify-center items-center gap-3"
         >
-          <span class="font-[Inter] font-extrabold text-[16px] text-white"
+          <span
+            id="totalCopy"
+            class="font-[Inter] font-extrabold text-[16px] text-white"
             >0</span
           >
           <p class="text-white font-semibold">Copy</p>
@@ -117,7 +119,7 @@
             </div>
             <div class="num">
               <h1
-                class="font-roboto text-2xl md:text-3xl font-bold leading-normal"
+                class="service-number font-roboto text-2xl md:text-3xl font-bold leading-normal"
               >
                 999
               </h1>
@@ -127,13 +129,13 @@
             </div>
             <div class="btn-section flex gap-2 w-full">
               <div
-                class="flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-6 cursor-pointer hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
+                class="copy-btn flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-6 cursor-pointer hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
               >
                 <span><i class="fa-regular fa-copy"></i></span>
                 <span class="font-roboto font-normal">Copy</span>
               </div>
               <div
-                class="flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg bg-green-600 px-6 cursor-pointer hover:bg-gray-400 transition-colors duration-300 ease-in-out"
+                class="callButton flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg bg-green-600 px-6 cursor-pointer hover:bg-gray-400 transition-colors duration-300 ease-in-out"
               >
                 <span><i class="fa-solid fa-phone text-white"></i></span>
                 <span class="font-roboto font-normal text-base text-white"
@@ -166,29 +168,29 @@
               <h3
                 class="font-['Hind_Madurai'] text-xl md:text-2xl font-bold leading-8"
               >
-                Police Helpline Number
+                National Emergency Number
               </h3>
-              <p class="font-[Roboto] text-[#5C5C5C]">Police</p>
+              <p class="font-[Roboto] text-[#5C5C5C]">National Emergency</p>
             </div>
             <div class="num">
               <h1
-                class="font-roboto text-2xl md:text-3xl font-bold leading-normal"
+                class="service-number font-roboto text-2xl md:text-3xl font-bold leading-normal"
               >
-                999
+                666
               </h1>
               <div class="tag px-4 py-[6px] rounded-full bg-[#F2F2F2]">
-                Police
+                Fire
               </div>
             </div>
             <div class="btn-section flex gap-2 w-full">
               <div
-                class="flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-6 cursor-pointer hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
+                class="copy-btn flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-6 cursor-pointer hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
               >
                 <span><i class="fa-regular fa-copy"></i></span>
                 <span class="font-roboto font-normal">Copy</span>
               </div>
               <div
-                class="flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg bg-green-600 px-6 cursor-pointer hover:bg-green-400 transition-colors duration-300 ease-in-out"
+                class="callButton flex h-10 flex-1 justify-center items-center gap-1.5 rounded-lg bg-green-600 px-6 cursor-pointer hover:bg-gray-400 transition-colors duration-300 ease-in-out"
               >
                 <span><i class="fa-solid fa-phone text-white"></i></span>
                 <span class="font-roboto font-normal text-base text-white"
@@ -208,24 +210,13 @@
               <p class="font-[Roboto] text-[20px]">Call History</p>
             </div>
             <div
-              class="copy rounded-[50px] bg-[#00A63E] flex w-[123px] h-[52px] p-3 justify-center items-center gap-3 cursor-pointer hover:bg-[#007F33] transition-all duration-300 ease-in-out"
+              id="clearHistoryBtn"
+              class="rounded-[50px] bg-[#00A63E] flex w-[123px] h-[52px] p-3 justify-center items-center gap-3 cursor-pointer hover:bg-[#007F33] transition-all duration-300 ease-in-out"
             >
               <p class="text-white font-semibold">Clear</p>
             </div>
           </div>
-          <div class="history-body flex flex-col gap-4">
-            <div
-              class="history-item flex items-center gap-4 px-3 py-4 bg-[#FAFAFA] w-full justify-between"
-            >
-              <div class="history-info">
-                <h4 class="font-[Inter] font-semibold">
-                  National Emergency Number
-                </h4>
-                <p class="font-['Hind_Madurai'] text-[#5C5C5C]">999</p>
-              </div>
-              <div class="history-time">11:36:58 AM</div>
-            </div>
-          </div>
+          <div class="history-body flex flex-col gap-4"></div>
         </div>
       </div>
     </div>
